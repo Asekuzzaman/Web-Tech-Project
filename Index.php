@@ -5,7 +5,7 @@ session_start();
 // Check if the renter is logged in
 if (isset($_SESSION['user_name'])) {
     $username = $_SESSION['user_name'];
-    header("Location: File/renterDash.php");
+    header("Location: controllers/renterDash.php");
 } 
 ?>
 
@@ -43,7 +43,7 @@ if (isset($_SESSION['user_name'])) {
         <li><a href="#contact">Contact</a></li>
         <!-- <li></li> -->
       </ul>
-      <a style="color: white; text-decoration: none;" href="file/loginReg.php" onmouseover="this.style.color='#f13a11'" onmouseout="this.style.color='white'">Login / Register</a>
+      <a style="color: white; text-decoration: none;" href="controllers/loginReg.php" onmouseover="this.style.color='#f13a11'" onmouseout="this.style.color='white'">Login / Register</a>
 
       <div class="icon">
         <ul class="social-icon ml-lg-3">
@@ -70,7 +70,7 @@ if (isset($_SESSION['user_name'])) {
 
 
     <div class="service-item">
-  <a href="File/House/house.php" style="text-decoration: none; color: inherit;">
+  <a href="views/house/house.php" style="text-decoration: none; color: inherit;">
     <dotlottie-player
       src="https://lottie.host/454bbcf7-5cda-47e5-91e5-1a6e87b1238e/Ui2DA7tjOP.lottie"
       background="transparent"
@@ -80,7 +80,7 @@ if (isset($_SESSION['user_name'])) {
       autoplay
     ></dotlottie-player>
   </a>
-  <a href="File/House/house.php" style="text-decoration: none; color: inherit;">
+  <a href="views/house/house.php" style="text-decoration: none; color: inherit;">
     <h3>HOUSE</h3>
   </a>
   <p>Are you worried about your safety while traveling? Track your ride in real-time for a secure journey.</p>
@@ -88,7 +88,7 @@ if (isset($_SESSION['user_name'])) {
 
 
       <div class="service-item">
-      <a href="File/Car/car.php" style="text-decoration: none; color: inherit;">
+      <a href="views/Car/car.php" style="text-decoration: none; color: inherit;">
         <dotlottie-player
         src="https://lottie.host/5e0880fa-f234-46e7-918e-24c7feb496dc/fuFn0umgVY.lottie"
         background="transparent"
@@ -98,14 +98,14 @@ if (isset($_SESSION['user_name'])) {
         autoplay
         ></dotlottie-player>
       </a>
-      <a href="File/Car/car.php" style="text-decoration: none; color: inherit;">
+      <a href="views/Car/car.php" style="text-decoration: none; color: inherit;">
         <h3>Car</h3>
       </a>
         <p>Are you worried about your safety while traveling? Track your ride in real-time for a secure journey.</p>
       </div>
 
       <div class="service-item">
-      <a href="File/Laptop/laptop.php" style="text-decoration: none; color: inherit;">
+      <a href="views/Laptop/laptop.php" style="text-decoration: none; color: inherit;">
         <dotlottie-player
   src="https://lottie.host/c1b9955d-555e-4a06-97fb-7da0f998458e/4MJi4z8Od7.lottie"
   background="transparent"
@@ -115,7 +115,7 @@ if (isset($_SESSION['user_name'])) {
   autoplay
 ></dotlottie-player>
 </a>
-<a href="File/Laptop/laptop.php" style="text-decoration: none; color: inherit;">
+<a href="views/Laptop/laptop.php" style="text-decoration: none; color: inherit;">
         <h3>Laptop</h3>
 </a>
         <p>Are you worried about your safety while traveling? Track your ride in real-time for a secure journey.</p>
@@ -317,7 +317,7 @@ if (isset($_SESSION['user_name'])) {
               <div class="foot">
                   <p class="copyright-text">Copyright &copy; 2024 RentLab Co.
                   
-                  <br>All rights reserved: <a href="https://www.muzahidulsaki.social" target="_blank">Muzahidul Saki</a></p>
+                  <br>All rights reserved: <a href="https://www.asekuzzamanSabbir.social" target="_blank">Asekuzzaman Sabbir</a></p>
               </div>
 
               <div class="footemail">
@@ -326,7 +326,7 @@ if (isset($_SESSION['user_name'])) {
                       <a href="#">Email: rentlab@company.com</a>
                   </p>
 
-                  <p><i class="fa fa-phone mr-1"></i> 01778776701</p>
+                  <p><i class="fa fa-phone mr-1"></i> 01754146126</p>
               </div>
               
          </div>

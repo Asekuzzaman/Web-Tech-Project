@@ -58,7 +58,7 @@ $result = mysqli_query($conn, $query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rent Car</title>
-    <link rel="stylesheet" href="../../css/house.css">
+    <link rel="stylesheet" href="css/house/house.css">
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <body>
@@ -82,7 +82,7 @@ $result = mysqli_query($conn, $query);
                onmouseover="this.style.color='#f13a11'" onmouseout="this.style.color='white'">Logout</a>
         <?php else: ?>
             <!-- Display Login/Register link if not logged in -->
-            <a style="color: white; text-decoration: none;" href="file/loginReg.php" 
+            <a style="color: white; text-decoration: none;" href="controllers/loginReg.php" 
                onmouseover="this.style.color='#f13a11'" onmouseout="this.style.color='white'">Login / Register</a>
         <?php endif; ?>
         
@@ -141,7 +141,7 @@ $result = mysqli_query($conn, $query);
 
             <!-- Filter Buttons -->
             <button type="submit">Apply Filter</button>
-            <button type="button" onclick="location.href='house.php';">Clear Filter</button>
+            <button type="button" onclick="location.href='controllers/house/house.php';">Clear Filter</button>
         </form>
     </div>
 
@@ -172,7 +172,7 @@ $result = mysqli_query($conn, $query);
 
 
 
-  <script src="../../js/house.js"></script>
+  <script src="js/house.js"></script>
 
 
 

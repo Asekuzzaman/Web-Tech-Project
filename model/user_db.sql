@@ -113,10 +113,8 @@ CREATE TABLE `user_form` (
 --
 
 INSERT INTO `user_form` (`id`, `name`, `email`, `password`, `user_type`) VALUES
-(1, 'saki', 'mrmash420@gmail.com', '202cb962ac59075b964b07152d234b70', 'owner'),
-(2, 'Sakivhai', 'mrmash42@gmail.com', '202cb962ac59075b964b07152d234b70', 'renter'),
-(4, 'tanvir', 'tanvir@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'renter'),
-(5, 'siam', 'siamahmed12@gmail.com', '202cb962ac59075b964b07152d234b70', 'renter');
+(1, 'Sabbir', 'asekuzzaman.sabbir3@gmail.com', '202cb962ac59075b964b07152d234b70', 'owner'),
+(2, 'jannat', 'jannat@gmail.com', '202cb962ac59075b964b07152d234b70', 'renter'),
 
 --
 -- Indexes for dumped tables

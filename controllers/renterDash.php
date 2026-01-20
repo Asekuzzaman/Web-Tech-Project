@@ -62,7 +62,7 @@ if (isset($_SESSION['user_name'])) {
        onmouseout="this.style.color='white'">Logout</a>
         <?php else: ?>
             <!-- Display Login/Register link if not logged in -->
-            <a style="color: white; text-decoration: none;" href="file/loginReg.php" 
+            <a style="color: white; text-decoration: none;" href="controllers/loginReg.php" 
                onmouseover="this.style.color='#f13a11'" onmouseout="this.style.color='white'">Login / Register</a>
         <?php endif; ?>
         
@@ -89,7 +89,7 @@ if (isset($_SESSION['user_name'])) {
     <div class="services-container">
 
     <div class="service-item">
-  <a href="house/house.php" style="text-decoration: none; color: inherit;">
+  <a href="../views/house/house.php" style="text-decoration: none; color: inherit;">
     <dotlottie-player
       src="https://lottie.host/454bbcf7-5cda-47e5-91e5-1a6e87b1238e/Ui2DA7tjOP.lottie"
       background="transparent"
@@ -99,14 +99,14 @@ if (isset($_SESSION['user_name'])) {
       autoplay
     ></dotlottie-player>
   </a>
-  <a href="house/house.php" style="text-decoration: none; color: inherit;">
+  <a href="../views/house/house.php" style="text-decoration: none; color: inherit;">
     <h3>HOUSE</h3>
   </a>
   <p>Are you worried about your safety while traveling? Track your ride in real-time for a secure journey.</p>
 </div>
 
 <div class="service-item">
-  <a href="Car/car.php" style="text-decoration: none; color: inherit;">
+  <a href="../views/Car/car.php" style="text-decoration: none; color: inherit;">
     <dotlottie-player
       src="https://lottie.host/5e0880fa-f234-46e7-918e-24c7feb496dc/fuFn0umgVY.lottie"
       background="transparent"
@@ -116,14 +116,14 @@ if (isset($_SESSION['user_name'])) {
       autoplay
     ></dotlottie-player>
   </a>
-  <a href="Car/car.php" style="text-decoration: none; color: inherit;">
+  <a href="../views/Car/car.php" style="text-decoration: none; color: inherit;">
     <h3>CAR</h3>
   </a>
   <p>Are you worried about your safety while traveling? Track your ride in real-time for a secure journey.</p>
 </div>
 
 <div class="service-item">
-  <a href="Laptop/laptop.php" style="text-decoration: none; color: inherit;">
+  <a href="../views/Laptop/laptop.php" style="text-decoration: none; color: inherit;">
     <dotlottie-player
       src="https://lottie.host/c1b9955d-555e-4a06-97fb-7da0f998458e/4MJi4z8Od7.lottie"
       background="transparent"
@@ -133,7 +133,7 @@ if (isset($_SESSION['user_name'])) {
       autoplay
     ></dotlottie-player>
   </a>
-  <a href="Laptop/laptop.php" style="text-decoration: none; color: inherit;">
+  <a href="../views/Laptop/laptop.php" style="text-decoration: none; color: inherit;">
     <h3>LAPTOP</h3>
   </a>
   <p>Are you worried about your safety while traveling? Track your ride in real-time for a secure journey.</p>
@@ -348,7 +348,7 @@ if (isset($_SESSION['user_name'])) {
               <div class="foot">
                   <p class="copyright-text">Copyright &copy; 2024 RentLab Co.
                   
-                  <br>All rights reserved: <a href="https://www.muzahidulsaki.social" target="_blank">Muzahidul Saki</a></p>
+                  <br>All rights reserved: <a href="https://asekuzzaman.sabbir@gmail.social" target="_blank">Asekuzzaman Sabbir</a></p>
               </div>
 
               <div class="footemail">
