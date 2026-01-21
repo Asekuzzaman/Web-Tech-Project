@@ -147,7 +147,7 @@
     display: flex;
   }
 
-  /* .filter{
+   .filter{
     width: 20%;
     height: 1000px;
     background-color: rgb(41, 41, 38);
@@ -184,16 +184,22 @@
 
   /*  */
 
-/* 
+ 
   body {
     font-family: Arial, sans-serif;
     margin: 0;
     display: flex;
   }
-   */
-  /* body {
-      font-family: Arial, sans-serif;
-    }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+  }
 
     .container {
       display: flex;
@@ -283,8 +289,8 @@
     }
 
 
-     /* Modal Styles */
-     /* .modal {
+      Modal Styles */
+      .modal {
         display: none;
         position: fixed;
         top: 0;
@@ -347,7 +353,7 @@
   
       .modal button:hover {
         background-color: #218838;
-      } */
+      } 
 
       #carPreview {
         display: none;

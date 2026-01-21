@@ -147,7 +147,7 @@
     display: flex;
   }
 
-  /* .filter{
+   .filter{
     width: 20%;
     height: 1000px;
     background-color: rgb(41, 41, 38);
@@ -182,16 +182,16 @@
     padding-top: 25px;
   } */
 
-  /*  */
 
-/* 
+
+
   body {
     font-family: Arial, sans-serif;
     margin: 0;
     display: flex;
   }
    */
-  /* body {
+   body {
       font-family: Arial, sans-serif;
     }
 
@@ -283,8 +283,8 @@
     }
 
 
-     /* Modal Styles */
-     /* .modal {
+      Modal Styles */
+      .modal {
         display: none;
         position: fixed;
         top: 0;
