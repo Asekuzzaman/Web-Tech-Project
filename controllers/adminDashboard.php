@@ -55,25 +55,41 @@ $laptop_result = mysqli_query($conn, $laptop_query);
 
 // Handle delete product request
 if (isset($_POST['delete_product'])) {
-    $id = $_POST['delete_product_id'];
+    $id = mysqli_real_escape_string($conn, $_POST['delete_product_id']);
     $table = $_POST['delete_product_table'];
-    $delete_query = "DELETE FROM $table WHERE id = '$id'";
-    if (mysqli_query($conn, $delete_query)) {
-        header("Location: adminDashboard.php");
+    $allowed_tables = ['cars', 'house', 'laptop'];
+    if (!in_array($table, $allowed_tables)) {
+        echo "Invalid table specified.";
     } else {
-        echo "Error deleting product: " . mysqli_error($conn);
+        $delete_query = "DELETE FROM `$table` WHERE `id` = '$id'";
+        if (mysqli_query($conn, $delete_query)) {
+            header("Location: adminDashboard.php");
+            exit;
+        } else {
+            echo "Error deleting product: " . mysqli_error($conn);
+        }
     }
 }
 
 // Handle update product request
 if (isset($_POST['update_product'])) {
-    $id = $_POST['edit_product_id'];
-    $table = $_POST['edit_product_table'];
-    $name = $_POST['edit_product_name'];
-    $price = $_POST['edit_product_price'];
-    $category = $_POST['edit_product_category'];
+    $id = mysqli_real_escape_string($conn, $_POST['edit_product_id']);
+    $table = mysqli_real_escape_string($conn, $_POST['edit_product_table']);
+    $name = mysqli_real_escape_string($conn, $_POST['edit_product_name']);
+    $price = mysqli_real_escape_string($conn, $_POST['edit_product_price']);
+    $category = mysqli_real_escape_string($conn, $_POST['edit_product_category']);
 
-    $update_query = "UPDATE $table SET name = '$name', price = '$price', category = '$category' WHERE id = '$id'";
+    // Map table to correct name column
+    $name_col = 'name';
+    if ($table === 'cars') {
+        $name_col = 'car_name';
+    } elseif ($table === 'house') {
+        $name_col = 'house_name';
+    } elseif ($table === 'laptop') {
+        $name_col = 'laptop_name';
+    }
+
+    $update_query = "UPDATE `$table` SET `$name_col` = '$name', `price` = '$price', `category` = '$category' WHERE `id` = '$id'";
     if (mysqli_query($conn, $update_query)) {
         header("Location: adminDashboard.php");
     } else {
@@ -248,6 +264,58 @@ if (isset($_POST['update_product'])) {
             </tr>
         <?php } ?>
     </table>
+    
+    <!-- Houses Table -->
+    <h3>Houses</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+        <?php while ($house = mysqli_fetch_assoc($house_result)) { ?>
+            <tr>
+                <td><?php echo $house['id']; ?></td>
+                <td><?php echo htmlspecialchars($house['house_name']); ?></td>
+                <td><?php echo htmlspecialchars($house['price']); ?></td>
+                <td><?php echo htmlspecialchars($house['category']); ?></td>
+                <td><img src="../images/<?php echo $house['image']; ?>" alt="House Image" class="product-image" ></td>
+                <td>
+                    <button class="btn-edit" onclick="editProduct(<?php echo $house['id']; ?>, 'house', '<?php echo htmlspecialchars($house['house_name']); ?>', '<?php echo $house['price']; ?>', '<?php echo $house['category']; ?>')">Edit</button>
+                    <button class="btn-delete" onclick="deleteProduct(<?php echo $house['id']; ?>, 'house')">Delete</button>
+                </td>
+            </tr>
+        <?php } ?>
+    </table>
+
+    <!-- Laptops Table -->
+    <h3>Laptops</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+        <?php while ($laptop = mysqli_fetch_assoc($laptop_result)) { ?>
+            <tr>
+                <td><?php echo $laptop['id']; ?></td>
+                <td><?php echo htmlspecialchars($laptop['laptop_name']); ?></td>
+                <td><?php echo htmlspecialchars($laptop['price']); ?></td>
+                <td><?php echo htmlspecialchars($laptop['category']); ?></td>
+                <td><img src="../images/<?php echo $laptop['image']; ?>" alt="Laptop Image" class="product-image" ></td>
+                <td>
+                    <button class="btn-edit" onclick="editProduct(<?php echo $laptop['id']; ?>, 'laptop', '<?php echo htmlspecialchars($laptop['laptop_name']); ?>', '<?php echo $laptop['price']; ?>', '<?php echo $laptop['category']; ?>')">Edit</button>
+                    <button class="btn-delete" onclick="deleteProduct(<?php echo $laptop['id']; ?>, 'laptop')">Delete</button>
+                </td>
+            </tr>
+        <?php } ?>
+    </table>
 </div>
 
 <!-- Edit Product Form -->
@@ -275,6 +343,9 @@ if (isset($_POST['update_product'])) {
     </form>
 </div>
 
+<!-- Hidden form for product delete actions -->
+<form id="productDeleteForm" method="POST" style="display:none;"></form>
+
 <script>
     function editUser(user) {
     const editForm = document.getElementById('editForm');
@@ -301,24 +372,26 @@ window.onclick = function (event) {
     if (event.target === modal) {
         modal.style.display = 'none';
     }
-
-    function editProduct(id, table, name, price, category) {
-        document.getElementById('editProductForm').style.display = 'block';
-        document.getElementById('edit_product_id').value = id;
-        document.getElementById('edit_product_table').value = table;
-        document.getElementById('edit_product_name').value = name;
-        document.getElementById('edit_product_price').value = price;
-        document.getElementById('edit_product_category').value = category;
-    }
-
-    function deleteProduct(id, table) {
-        if (confirm('Are you sure you want to delete this product?')) {
-            document.forms[0].innerHTML += `<input type="hidden" name="delete_product_id" value="${id}">
-                                            <input type="hidden" name="delete_product_table" value="${table}">`;
-            document.forms[0].submit();
-        }
-    }
 };
+
+function editProduct(id, table, name, price, category) {
+    document.getElementById('editProductForm').style.display = 'block';
+    document.getElementById('edit_product_id').value = id;
+    document.getElementById('edit_product_table').value = table;
+    document.getElementById('edit_product_name').value = name;
+    document.getElementById('edit_product_price').value = price;
+    document.getElementById('edit_product_category').value = category;
+}
+
+function deleteProduct(id, table) {
+    if (confirm('Are you sure you want to delete this product?')) {
+        const form = document.getElementById('productDeleteForm');
+        form.innerHTML = '<input type="hidden" name="delete_product" value="1">' +
+                         '<input type="hidden" name="delete_product_id" value="' + id + '">' +
+                         '<input type="hidden" name="delete_product_table" value="' + table + '">';
+        form.submit();
+    }
+}
 </script>
 
 </body>

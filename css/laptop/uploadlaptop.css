@@ -1,4 +1,4 @@
-/* Center the main container /
+/* Center the main container */
 .main {
     display: flex;
       flex-direction: column;
@@ -7,15 +7,15 @@
       height: 100vh;
     background: linear-gradient(to right, #fffbfb, #fff4f4);
   }
-
+  
   .main h3 {
     font-size: 24px;
     color: #333;
     margin-bottom: 20px;
     text-align: center;
   }
-
-  / Style the form /
+  
+  /* Style the form */
   form {
     background-color: #f0ebeb;
     padding: 30px 40px;
@@ -25,16 +25,16 @@
     width: 100%;
     max-width: 400px;
   }
-
-  / Style labels /
+  
+  /* Style labels */
   form label {
     font-weight: bold;
     display: block;
     margin-bottom: 8px;
     text-align: left;
   }
-
-  / Style inputs /
+  
+  /* Style inputs */
   form input[type="text"],
   form select,
   form input[type="file"] {
@@ -45,8 +45,8 @@
     border-radius: 5px;
     font-size: 16px;
   }
-
-  / Style the submit button /
+  
+  /* Style the submit button */
   form button {
     background-color: #da5e16;
     color: #ffffff;
@@ -58,19 +58,19 @@
     transition: background-color 0.3s ease;
     width: 100%;
   }
-
+  
   form button:hover {
     background-color: #a7522d;
   }
-
-  / Add some hover effects /
+  
+  /* Add some hover effects */
   form input:focus,
   form select:focus {
     border-color: #94a8ba;
     outline: none;
   }
-
-  / Responsive adjustments */
+  
+  /* Responsive adjustments */
   @media (max-width: 600px) {
     form {
         padding: 20px;
