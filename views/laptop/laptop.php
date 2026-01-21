@@ -82,7 +82,7 @@ $result = mysqli_query($conn, $query);
                onmouseover="this.style.color='#f13a11'" onmouseout="this.style.color='white'">Logout</a>
         <?php else: ?>
             <!-- Display Login/Register link if not logged in -->
-            <a style="color: white; text-decoration: none;" href="file/loginReg.php" 
+            <a style="color: white; text-decoration: none;" href="controllers/loginReg.php" 
                onmouseover="this.style.color='#f13a11'" onmouseout="this.style.color='white'">Login / Register</a>
         <?php endif; ?>
         
