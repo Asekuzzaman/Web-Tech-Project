@@ -55,6 +55,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirm Car Rental</title>
     <link rel="stylesheet" href="../../css/car/car.css"> <!-- If using external CSS file -->
+    <style>
+        html, body { height: 100%; margin: 0; }
+        body { display: flex; align-items: center; justify-content: center; background: #f5f5f5; }
+        .confirmation-container {
+            align-items: center;
+            max-width: 900px;
+            width: 90%;
+            background: #fff;
+            padding: 24px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
     <div class="confirmation-container">
