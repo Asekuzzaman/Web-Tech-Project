@@ -49,7 +49,10 @@ document.addEventListener("DOMContentLoaded",  function() {
       const category = encodeURIComponent(this.getAttribute("data-category"));
       const image = encodeURIComponent(this.getAttribute("data-image"));
 
-      const url = `carconfirm.php?name=${name}&price=${price}&category=${category}&image=${image}`;
+    // Use absolute path from site root to controller
+    // Change the URL line in car.js to this:
+// Change the URL line in car.js to this:
+const url = `/WEBTECHPROJECT/controllers/car/carconfirm.php?name=${name}&price=${price}&category=${category}&image=${image}`;
       window.location.href = url;
   });
 });

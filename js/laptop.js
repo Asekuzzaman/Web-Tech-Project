@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const category = encodeURIComponent(this.getAttribute("data-category"));
         const image = encodeURIComponent(this.getAttribute("data-image"));
   
-        const url = `laptopconfirm.php?name=${name}&price=${price}&category=${category}&image=${image}`;
+        const url = `/WEBTECHPROJECT/controllers/Laptop/laptopconfirm.php?name=${name}&price=${price}&category=${category}&image=${image}`;
         window.location.href = url;
     });
   });

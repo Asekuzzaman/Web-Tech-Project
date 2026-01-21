@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const name = this.querySelector("h3").innerText;
             const price = this.querySelector("p:nth-of-type(1)").innerText.split(": ")[1];
             const category = this.querySelector("p:nth-of-type(2)").innerText.split(": ")[1];
-  
+
             previewImage.src = imageSrc;
             previewName.innerText = name;
-            previewPrice.innerText = Price: ${price};
-            previewCategory.innerText = Category: ${category};
-  
+            previewPrice.innerText = `Price: ${price}`;
+            previewCategory.innerText = `Category: ${category}`;
+
             preview.style.display = "block";
-  
+
             // Attach car data to the rent button
             rentButton.setAttribute("data-name", name);
             rentButton.setAttribute("data-price", price);
@@ -39,14 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
   
-    // Redirect to carconfirm.php on Rent button click
+    // Redirect to houseconfirm.php on Rent button click
     rentButton.addEventListener("click", function () {
         const name = encodeURIComponent(this.getAttribute("data-name"));
         const price = encodeURIComponent(this.getAttribute("data-price"));
         const category = encodeURIComponent(this.getAttribute("data-category"));
         const image = encodeURIComponent(this.getAttribute("data-image"));
-  
-        const url = houseconfirm.php?name=${name}&price=${price}&category=${category}&image=${image};
+
+        const url = `/WEBTECHPROJECT/controllers/house/houseconfirm.php?name=${name}&price=${price}&category=${category}&image=${image}`;
         window.location.href = url;
     });
   });

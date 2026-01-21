@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirm Car Rental</title>
-    <link rel="stylesheet" href="../../css/laptop.css"> <!-- If using external CSS file -->
+    <link rel="stylesheet" href="../../css/car/car.css"> <!-- If using external CSS file -->
 </head>
 <body>
     <div class="confirmation-container">

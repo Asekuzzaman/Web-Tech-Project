@@ -326,7 +326,7 @@ if (isset($_SESSION['user_name'])) {
                       <a href="#">Email: rentlab@company.com</a>
                   </p>
 
-                  <p><i class="fa fa-phone mr-1"></i> 01754146126</p>
+                  <p><i class="fa fa-phone mr-1"></i> 01754146126 </p>
               </div>
               
          </div>
